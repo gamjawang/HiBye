@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <style>
+    body {
+      font-family: "Roboto", "Noto Sans KR", sans-serif;
+      font-size: 80px;
+      font-weight: 400;
+      height: 3000px;
+    }
+    #header div{
+      transform: translateX(-800px);
+      transition: 0.5s;
+    }
+    #header div.active{
+      transform: translateX(0);
+    }
+
+    #page1 div{
+      transform: translateX(-800px);
+      transition: 0.5s;
+    }
+    #page1 div.active{
+      transform: translateX(0);
+    }
+
+    #page2 div{
+      transform: translateX(-800px);
+      transition: 0.5s;
+    }
+    #page2 div.active{
+      transform: translateX(0);
+    }
+
+    #page3 div{
+      transform: translateX(-800px);
+      transition: 0.5s;
+    }
+    #page3 div.active{
+      transform: translateX(0);
+    }
+
+    #page4 div{
+      transform: translateX(-800px);
+      transition: 0.5s;
+    }
+    #page4 div.active{
+      transform: translateX(0);
+    }
+
+    #page5 div{
+      transform: translateX(-800px);
+      transition: 0.5s;
+    }
+    #page5 div.active{
+      transform: translateX(0);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header id="header" style="height : 500px">
+      <div class="type1">Main Animation Text1</div>
+    </header>
+
+    <section id="page1" style="height : 500px">
+      <div class="type1">Main Animation Text2</div>
+    </section>
+
+    <section id="page2" style="height : 500px">
+      <div class="type1">Main Animation Text3</div>
+    </section>
+
+    <section id="page3" style="height : 500px">
+      <div class="type1">Main Animation Text4</div>
+    </section>
+
+    <section id="page4" style="height : 500px">
+      <div class="type1">Main Animation Text5</div>
+    </section>
+
+    <section id="page5" style="height : 500px">
+      <div class="type1">Main Animation Text6</div>
+    </section>
+
+    <script>
+      $(function(){{
+        setTimeout(function(){
+        $("html, body").animate({"scrollTop" : "0px"},300,function(){
+          $("#header div").addClass("active");
+
+          $(window).scroll(function(){
+            t = $(window).scrollTop();
+
+            if(t< $("#header").offset().top){
+              $("#header div").addClass("active");
+            }else if(t< $("#page1").offset().top+10){
+              $("#page1 div").addClass("active");
+            }else if(t< $("#page2").offset().top+20){
+              $("#page2 div").addClass("active");
+            }else if(t< $("#page3").offset().top+30){
+              $("#page3 div").addClass("active");
+            }else if(t< $("#page4").offset().top+40){
+              $("#page4 div").addClass("active");
+            }else if(t< $("#page5").offset().top+50){
+              $("#page5 div").addClass("active");
+            }
+          })
+        });
+      });
+      }});
+    </script>
+</body>
+</html>
